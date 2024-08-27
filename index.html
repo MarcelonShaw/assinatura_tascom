@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Assinatura de E-mail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #00B691;
+      background-image: url('https://i.imgur.com/hk4i0n4.png');
+      /* Adiciona a imagem de fundo */
+      background-size: cover;
+      /* Faz a imagem cobrir todo o fundo */
+      background-position: center;
+      /* Centraliza a imagem de fundo */
+      background-repeat: no-repeat;
+      /* Evita que a imagem se repita */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      /* Garante que tudo seja exibido na tela inteira */
+    }
+
+    form {
+      width: 100%;
+      max-width: 500px;
+      /* Limita o tamanho máximo do formulário */
+      padding: 10px;
+      /* Adiciona espaço interno no formulário */
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    button {
+      width: 100%;
+      /* Garante que os campos e o botão ocupem 100% da largura disponível */
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      /* Inclui padding e bordas na largura total */
+    }
+
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #24394A;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      width: 100%;
+      /* Garante que o botão ocupe o mesmo espaço dos campos */
+      box-sizing: border-box;
+      /* Inclui padding na largura total */
+    }
+
+    button:hover {
+      background-color: #028b8b;
+    }
+
+    .generated-signature {
+      width: 100%;
+      max-width: 500px;
+      /* Limita a largura da assinatura gerada */
+      text-align: center;
+    }
+
+    #copyButton {
+      margin-top: 15px;
+    }
+
+    .signature-container {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      height: 50px;
+    }
+
+    h2,
+    label,
+    .generated-signature h3 {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Logo no topo da página -->
+  <img src="https://i.imgur.com/qSUav1Z.png" alt="Tascom Logo" class="logo">
+
+  <h2>Gerador de Assinatura</h2>
+  <form id="signatureForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" onblur="capitalizarNome()">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Digite seu email">
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone" placeholder="Ex: 81989837866" maxlength="11" pattern="\d{11}"
+      title="Insira apenas 11 dígitos numéricos" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11)">
+
+    <button type="button" onclick="gerarAssinatura()">Gerar Assinatura</button>
+  </form>
+
+  <div class="generated-signature">
+    <h3>Assinatura Gerada:</h3>
+    <div id="assinatura" class="signature-container">
+      <div class="signature-background">
+        <table
+          style="max-width: 500px; background-color: rgba(1, 161, 159, 0.8); border-radius: 4px; text-align: left;">
+          <tbody>
+            <tr style=" height: 90px; width: 150px; color: #fff;">
+              <td style="width: 70%; padding: 0 10px;">
+                <p
+                  style="font-family: 'Rubik', sans-serif; font-weight: bolder; font-size: 14px; margin: 1px !important;">
+                  Seu Nome Aqui
+                </p>
+                <a href="mailto:seuemail@dominio.com"
+                  style="font-family: 'Maven Pro', sans-serif; font-weight: 100; font-size: 11px; color: #fff; white-space: nowrap; text-decoration: none;">
+                  seuemail@email.com
+                </a>
+                <div
+                  style="font-family: 'Rubik', sans-serif; font-weight: bold; font-size: 12px; border: 1px solid #fff; border-radius: 4px; margin: 4px 0 0 0; padding: 1px 3px;">
+                  <a href="https://www.linkedin.com/company/tascomtecnologia/" target="_blank">
+                    <img src="https://i.imgur.com/ZOG6MpW.png"
+                      style="height: 16px; width: 16px; margin: 2px 5px 0 0;" />
+                  </a>
+                  <a href="https://www.instagram.com/tascomtecnologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank">
+                    <img src="https://i.imgur.com/uNVGI2L.png"
+                      style="height: 16px; width: 16px; margin: 2px 5px 0 0;" />
+                  </a>
+                  <span>tascomtecnologia</span>
+                  <p style="margin: 1px !important;">
+                    <span>81 98989.8989</span>
+                  </p>
+                </div>
+                <a href="https://tascomtecnologia.com.br/"
+                  style="font-family: 'Maven Pro', sans-serif; font-weight: 80px; font-size: 11px; color: #fff; text-decoration: none;">
+                  www.tascomtecnologia.com.br</a>
+              </td>
+              <td style="width: 30%; text-align: right; padding-right: 10px;">
+                <img src="https://i.imgur.com/sebAOEI.png" style="height: 100px; border-radius: 4px;" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button id="copyButton" style="display:none;" onclick="copiarAssinatura()">Copiar Assinatura</button>
+  </div>
+
+  <script>
+    // Função para capitalizar a primeira letra de cada palavra no campo de nome
+    function capitalizarNome() {
+      const nomeInput = document.getElementById('nome');
+      const nomeFormatado = nomeInput.value.toLowerCase().split(' ').map(palavra => {
+        return palavra.charAt(0).toUpperCase() + palavra.slice(1);
+      }).join(' ');
+      nomeInput.value = nomeFormatado;
+    }
+
+    function formatarTelefone(telefone) {
+      // Remove todos os caracteres que não são números
+      telefone = telefone.replace(/\D/g, '');
+
+      // Aplica a máscara no formato XX XXXXX.XXXX
+      const formatted = telefone.replace(/(\d{2})(\d{5})(\d{4})/, "$1 $2.$3");
+      return formatted;
+    }
+
+    function gerarAssinatura() {
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      let telefone = document.getElementById('telefone').value;
+
+      // Formatar o telefone antes de gerar a assinatura
+      telefone = formatarTelefone(telefone);
+
+      const assinaturaHTML = `
+                <div class="signature-background">
+                    <table 
+                      style="max-width: 500px; background-color: rgba(1, 161, 159, 0.8); border-radius: 4px; text-align: left;">
+                      <tbody>
+                        <tr 
+                          style=" height: 90px; width: 150px; color: #fff;">
+                          <td 
+                            style="width: 70%; padding: 0 10px;">
+                            <p 
+                              style="font-family: 'Rubik', sans-serif; font-weight: bolder; font-size: 14px; margin: 1px !important;">
+                                ${nome}
+                            </p>
+                            <a 
+                              href="mailto:${email}" 
+                              style="font-family: 'Maven Pro', sans-serif; font-weight: 100; font-size: 11px; color: #fff; white-space: nowrap; text-decoration: none;">
+                                ${email}
+                            </a>
+                            <div 
+                              style="font-family: 'Rubik', sans-serif; font-weight: bold; font-size: 12px; border: 1px solid #fff; border-radius: 4px; margin: 4px 0 0 0; padding: 1px 3px;">
+                              <a
+                                href="https://www.linkedin.com/company/tascomtecnologia/" 
+                                target="_blank">
+                                <img 
+                                src="https://i.imgur.com/ZOG6MpW.png"
+                                style="height: 16px; width: 16px; margin: 2px 5px 0 0;" />
+                              </a>
+                              <a 
+                                href="https://www.instagram.com/tascomtecnologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                                target="_blank">
+                                <img  
+                                  src="https://i.imgur.com/uNVGI2L.png"
+                                  style="height: 16px; width: 16px; margin: 2px 5px 0 0;" />
+                              </a>
+                              <span>tascomtecnologia</span>
+                              <p style="margin: 1px !important;">
+                                <span>${telefone}</span>
+                              </p>
+                            </div>
+                            <a 
+                              href="https://tascomtecnologia.com.br/" 
+                              style="font-family: 'Maven Pro', sans-serif; font-weight: 80px; font-size: 11px; color: #fff; text-decoration: none;">
+                              www.tascomtecnologia.com.br</a>
+                          </td>
+                          <td style="width: 30%; text-align: right; padding-right: 10px;">
+                            <img 
+                              src="https://i.imgur.com/sebAOEI.png" 
+                              style="height: 100px; border-radius: 4px;" />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            `;
+
+      document.getElementById('assinatura').innerHTML = assinaturaHTML;
+      document.getElementById('copyButton').style.display = 'block';
+    }
+
+    function copiarAssinatura() {
+      // Cria um elemento temporário para segurar o conteúdo da assinatura
+      const tempElement = document.createElement('textarea');
+      tempElement.value = document.getElementById('assinatura').innerHTML;
+      document.body.appendChild(tempElement);
+      tempElement.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempElement);
+
+      alert('Assinatura copiada com sucesso!');
+    }
+  </script>
+</body>
+
+</html>
