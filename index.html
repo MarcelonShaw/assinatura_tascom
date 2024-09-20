@@ -94,29 +94,27 @@
       color: white;
     }
 
-    /* Estilos para melhorar a aparência do campo de e-mail */
     .email-wrapper {
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-  overflow: hidden;
-  width: fit-content; /* Altera o tamanho da caixa para o tamanho necessário */
-}
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      overflow: hidden;
+      width: fit-content;
+    }
 
-.input-email {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-right: 1px solid #ccc;
-}
+    .input-email {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-right: 1px solid #ccc;
+    }
 
-.domain {
-  padding: 10px;
-  font-weight: bold;
-  color: white;
-  background-color: #00B691;
-}
-
+    .domain {
+      padding: 10px;
+      font-weight: bold;
+      color: white;
+      background-color: #00B691;
+    }
   </style>
 </head>
 
@@ -143,7 +141,51 @@
 
   <div class="generated-signature">
     <h3>Assinatura Gerada:</h3>
-    <div id="assinatura" class="signature-container"></div>
+    <div id="assinatura" class="signature-container">
+      <!-- Assinatura padrão exibida ao carregar a página -->
+      <div class="signature-background">
+        <table
+          style="max-width: 500px; background-color: rgba(1, 161, 159, 0.8); border-radius: 4px; text-align: left;">
+          <tbody>
+            <tr style=" height: 90px; width: 150px; color: #fff;">
+              <td style="width: 70%; padding: 0 10px;">
+                <p
+                  style="font-family: 'Rubik', sans-serif; font-weight: bolder; font-size: 14px; margin: 1px !important;">
+                  João da Silva
+                </p>
+                <a href="mailto:joao.silva@tascomtecnologia.com.br"
+                  style="font-family: 'Maven Pro', sans-serif; font-weight: 100; font-size: 11px; color: #fff; white-space: nowrap; text-decoration: none;">
+                  joao.silva@tascomtecnologia.com.br
+                </a>
+                <div
+                  style="font-family: 'Rubik', sans-serif; font-weight: bold; font-size: 12px; border: 1px solid #fff; border-radius: 4px; margin: 4px 0 0 0; padding: 1px 3px;">
+                  <a href="https://www.linkedin.com/company/tascomtecnologia/" target="_blank"
+                    style="text-decoration: none;">
+                    <img src="https://i.imgur.com/ZOG6MpW.png"
+                      style="height: 16px; width: 16px; margin: 2px 5px 0 0; display: inline-block; vertical-align: middle;" />
+                  </a>
+                  <a href="https://www.instagram.com/tascomtecnologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" style="text-decoration: none;">
+                    <img src="https://i.imgur.com/uNVGI2L.png"
+                      style="height: 16px; width: 16px; margin: 2px 5px 0 0; display: inline-block; vertical-align: middle;" />
+                  </a>
+                  <span style="vertical-align: middle;">tascomtecnologia</span>
+                  <p style="margin: 1px !important;">
+                    <span>81 9 8989-8989</span>
+                  </p>
+                </div>
+                <a href="https://tascomtecnologia.com.br/"
+                  style="font-family: 'Maven Pro', sans-serif; font-weight: 80px; font-size: 11px; color: #fff; text-decoration: none;">
+                  www.tascomtecnologia.com.br</a>
+              </td>
+              <td style="width: 30%; text-align: right; padding-right: 10px;">
+                <img src="https://i.imgur.com/sebAOEI.png" style="height: 100px; border-radius: 4px;" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <button id="copyButton" style="display:none;" onclick="copiarAssinatura()">Copiar Assinatura</button>
   </div>
 
@@ -188,16 +230,16 @@
                         ${email}
                     </a>
                     <div style="font-family: 'Rubik', sans-serif; font-weight: bold; font-size: 12px; border: 1px solid #fff; border-radius: 4px; margin: 4px 0 0 0; padding: 1px 3px;">
-                        <a href="https://www.linkedin.com/company/tascomtecnologia/" target="_blank">
-                            <img src="https://i.imgur.com/ZOG6MpW.png" style="height: 16px; width: 16px; margin: 2px 5px 0 0;" />
-                        </a>
-                        <a href="https://www.instagram.com/tascomtecnologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <img src="https://i.imgur.com/uNVGI2L.png" style="height: 16px; width: 16px; margin: 2px 5px 0 0;" />
-                        </a>
-                        <span>tascomtecnologia</span>
-                        <p style="margin: 1px !important;">
-                            <span>${telefone}</span>
-                        </p>
+                    <a href="https://www.linkedin.com/company/tascomtecnologia/" target="_blank" style="text-decoration: none;">
+                        <img src="https://i.imgur.com/ZOG6MpW.png" style="height: 16px; width: 16px; margin: 2px 3px 0 0; display: inline-block; vertical-align: middle;" />
+                    </a>
+                    <a href="https://www.instagram.com/tascomtecnologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="text-decoration: none;">
+                        <img src="https://i.imgur.com/uNVGI2L.png" style="height: 16px; width: 16px; margin: 2px 3px 0 0; display: inline-block; vertical-align: middle;" />
+                    </a>
+                    <span style="vertical-align: middle;">tascomtecnologia</span>
+                    <p style="margin: 1px !important;">
+                        <span>${telefone}</span>
+                    </p>
                     </div>
                     <a href="https://tascomtecnologia.com.br/" style="font-family: 'Maven Pro', sans-serif; font-weight: 80px; font-size: 11px; color: #fff; text-decoration: none;">
                         www.tascomtecnologia.com.br</a>
@@ -214,6 +256,7 @@
     document.getElementById('assinatura').innerHTML = assinaturaHTML;
     document.getElementById('copyButton').style.display = 'block';
 }
+
 
     function copiarAssinatura() {
       const tempElement = document.createElement('textarea');
