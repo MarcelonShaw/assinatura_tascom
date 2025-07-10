@@ -76,7 +76,7 @@
 
     .signature-container {
       margin-top: 20px;
-      padding: 20px;
+      padding: 10px;
       background-color: #f9f9f9;
       border-radius: 10px;
     }
@@ -177,8 +177,9 @@
                   style="font-family: 'Maven Pro', sans-serif; font-weight: 80px; font-size: 11px; color: #fff; text-decoration: none;">
                   www.tascomtecnologia.com.br</a>
               </td>
-              <td style="width: 30%; text-align: right; padding-right: 10px;">
-                <img src="https://i.imgur.com/sebAOEI.png" style="height: 100px; border-radius: 4px;" />
+              <td style="width: 30%; text-align: right; padding: 5px 5px 5px 0;">
+                <img src="https://i.imgur.com/4xOTjEKl.png"
+                  style="height: 100px; border-radius: 4px; display: block;" />
               </td>
             </tr>
           </tbody>
@@ -208,14 +209,14 @@
     }
 
     function gerarAssinatura() {
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value + '@tascomtecnologia.com.br';  // Concatenando o domínio
-    let telefone = document.getElementById('telefone').value;
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value + '@tascomtecnologia.com.br';  // Concatenando o domínio
+      let telefone = document.getElementById('telefone').value;
 
-    // Formatar o telefone antes de gerar a assinatura
-    telefone = formatarTelefone(telefone);
+      // Formatar o telefone antes de gerar a assinatura
+      telefone = formatarTelefone(telefone);
 
-    const assinaturaHTML = `
+      const assinaturaHTML = `
         <div class="signature-background">
             <table 
               style="max-width: 500px; background-color: rgba(1, 161, 159, 0.8); border-radius: 4px; text-align: left;">
@@ -244,7 +245,7 @@
                         www.tascomtecnologia.com.br</a>
                   </td>
                   <td style="width: 30%; text-align: right; padding-right: 10px;">
-                    <img src="https://i.imgur.com/sebAOEI.png" style="height: 100px; border-radius: 4px;" />
+                    <img src="https://i.imgur.com/4xOTjEKl.png" style="height: 100px; border-radius: 4px;" />
                   </td>
                 </tr>
               </tbody>
@@ -252,9 +253,9 @@
         </div>
     `;
 
-    document.getElementById('assinatura').innerHTML = assinaturaHTML;
-    document.getElementById('copyButton').style.display = 'block';
-}
+      document.getElementById('assinatura').innerHTML = assinaturaHTML;
+      document.getElementById('copyButton').style.display = 'block';
+    }
 
 
     function copiarAssinatura() {
